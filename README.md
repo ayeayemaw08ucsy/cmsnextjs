@@ -6,9 +6,9 @@ Content Management System with Nextjs
 ##Live app:
 
 ## Contents
--Post Article 
--List Articles
--Detail Article With Pagination
+-Post Article <br/>
+-List Articles <br/>
+-Detail Article With Pagination<br/>
 
 
 
