@@ -1,0 +1,1 @@
+{"ast":null,"code":"var Card = function Card() {};\n\nexport default Card;","map":{"version":3,"sources":["/Users/ayeayemaw/Downloads/WK/CMSBoilerplate/components/Card.js"],"names":["Card"],"mappings":"AAAA,IAAMA,IAAI,GAAG,SAAPA,IAAO,GAAM,CAClB,CADD;;AAIA,eAAeA,IAAf","sourcesContent":["const Card = () => {\n}\n\n\nexport default Card;"]},"metadata":{},"sourceType":"module"}
