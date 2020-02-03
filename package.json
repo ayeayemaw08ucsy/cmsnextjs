@@ -7,10 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next -p 3003",
     "build": "next build",
-    "start": "next start",
+    "start": "node server/server.js",
     "dev-express": "nodemon server/server.js ",
     "client": "npm run dev",
-    "server": "nodemon server/server.js",
+    "server": "nodemon server/server.js --watch server",
     "dev-express1": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
   "keywords": [],
