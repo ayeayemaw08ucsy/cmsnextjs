@@ -1,12 +1,11 @@
 const Article = require('../models/Article');
-//const User = require('../models/User');
 const express = require('express');
 const router = express.Router();
 
 
 router.get('/article-list/:page/:total',async(req,res) => {
-   // console.log('Article list param',req.params);
-    let { page , total } = req.params;
+ 
+   let { page , total } = req.params;
    console.log('Second Calling',req.params,page,total);
 
     page = parseInt(page);
