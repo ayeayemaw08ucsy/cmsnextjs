@@ -1,5 +1,5 @@
 {
-  "name": "CMSBoilerplate",
+  "name": "cms",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,8 @@
     "dev-express": "nodemon server/server.js ",
     "client": "npm run dev",
     "server": "nodemon server/server.js --watch server",
-    "dev-express1": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "dev-express1": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "now": "now && now alias && now rm cms --safe --yes"
   },
   "keywords": [],
   "author": "",
@@ -33,6 +34,8 @@
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
     "nodemon": "^2.0.2"
   }
 }
