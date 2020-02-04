@@ -6,16 +6,16 @@ import EditArticle from '../components/EditArticle';
 import { addArticle } from '../lib/api/article';
 import Router from 'next/router';
 import Header from '../components/Header';
+import Layout from '../components/MyLayout';
 import { Notifier } from '../components/Notifier';
 
 class AddArticle extends React.Component {
   
     constructor() {
-    
+
         super();
          this.snackbarRef = createRef();
-
-      }
+     }
       
       componentWillUnmount() {
           
@@ -32,24 +32,23 @@ class AddArticle extends React.Component {
                 query: { total: article.total , page: 1 }
             })
         }catch(err){
-           //notify('Unsuccessfully Saved');
-           console.log(err);
+
            this.snackbarRef.current.openSnackBar('Unsuccessfully Saved');
-           
         }
         
     }
 
     render() {
         return (
-            <div>
-            <Header/>
+          
+            <Layout>
             <div style={styleBody}>
             <h1>Create Article</h1>
               <EditArticle onSave={this.addArticleOnSave}/>
             </div>
             <Notifier ref= {this.snackbarRef}/>
-            </div>
+            </Layout>
+        
         )
     }
 }
