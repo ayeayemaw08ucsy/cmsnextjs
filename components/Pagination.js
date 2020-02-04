@@ -65,7 +65,7 @@ const Paignator = ({skip, range, handlePaginationChange}) => {
         console.log('Num******',num,page);
         const styleBtn = num === page ? classes.PaginatorPageNumSelected : classes.PaginatorPageNum;
         return (
-            <Button  className={styleBtn} onClick={() => moveToPage(num)}>
+            <Button  className={styleBtn} onClick={() => moveToPage(num)} key={num}>
                 {num}
             </Button>
         //     <Button
@@ -84,14 +84,14 @@ const Paignator = ({skip, range, handlePaginationChange}) => {
             <Fragment>
             <div style={stylePaginator}>
                 {range.length > 1 ?(
-                <Button variant="contained" color="secondary" onClick={moveToNextPage} key={range}>
+                <Button variant="contained" color="secondary" onClick={moveToNextPage}>
                     <span>{'<'}</span>{' '}
                     <span>Previous</span>
                 </Button>):null}
              {range.map(renderPageIndicators)}
 
              {range.length > 1 ? (
-                 <Button variant="contained" color="secondary" onClick={moveToPreviousPage} key={range}>
+                 <Button variant="contained" color="secondary" onClick={moveToPreviousPage}>
                      <span>Next</span>{' '}
                      <span>{'>'}</span>
                  </Button>
