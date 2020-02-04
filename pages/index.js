@@ -38,6 +38,7 @@ const Index = props => {
 
 Index.getInitialProps = async function(){
     const total = await getArticleCount();
+    console.log("Initial Count" , total)
     const page = total > 5 ? Math.floor(total/5) : 1;
     const res = await getArticleList({page,total});
     return Object.assign({},{total:total},{page:page},res);
