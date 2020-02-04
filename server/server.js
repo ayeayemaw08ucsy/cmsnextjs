@@ -5,16 +5,17 @@ const bodyParser = require('body-parser');
 const Article = require('./models/Article');
 const api = require('./api');
 
-const dev = process.env.NODE_ENV !== 'production';
+require('dotenv').config();
+const dev = process.env.NODE_ENV !== 'production'; 
+const PORT = process.env.SVR_PORT || 8080;
+const CLI_PORT = process.env.CLI_PORT || 3003;
+const BASE_URL = `http:localhost:${PORT}`;
 
 //Next's Js Custom Server
 const app = next({ dev });
 const handle = app.getRequestHandler();
 const server = express();
-  
-const PORT = process.env.SVR_PORT || 8080;
-const CLI_PORT = process.env.CLI_PORT || 3003;
-const BASE_URL = `http:localhost:${PORT}`;
+
 
 //MongoDB
 mongoose.Promise = global.Promise;
