@@ -1,5 +1,5 @@
+const generateSlug = require('../utilis/slugify');
 const mongoose = require('mongoose');
-
 const { Schema } = mongoose;
 
 const articelSchema = new Schema({
@@ -42,15 +42,16 @@ class ArticleClass {
        return Object.assign({},{articles},{total:total,page:page})
     }   
     static async add({title,slug,content}) {
-        //const slug = await generateSlug(this,title);
-        const totalCount = await this.getTotalCount();
-        const article = this.create({
+       slug = await generateSlug(this,slug);
+       const totalCount = await this.getTotalCount();
+       console.log(slug);
+       return  Object.assign({},{total: totalCount} ,this.create({
             title,
             slug,
             content,
             createdAt: new Date(),
-        });
-        return Object.assign ( {} ,{article},{total: totalCount});
+        }));
+    
     }
 
     static async getByIdAndSlug({_id,slug}) {
