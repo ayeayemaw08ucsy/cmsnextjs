@@ -23,11 +23,10 @@ class AddArticle extends React.Component {
 
     addArticleOnSave = async (data) => {
         try {
-          
+            
             const article = await addArticle(data);
             this.snackbarRef.current.openSnackBar('Saved..');
-            //notify('Saved');
-            //Router.push(`/detail/[_id]/[slug]`, `/detail/${article._id}/${article.slug}`);
+         
             Router.push({
                 pathname: '/article-list',
                 query: { total: article.total , page: 1 }
