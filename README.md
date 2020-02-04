@@ -1,5 +1,5 @@
 ## cmsnextjs
-Content Management System with Nextjs
+Content Management System with Nextjs Reactjs Material ui Mongo
 
 
 
