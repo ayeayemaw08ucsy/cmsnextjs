@@ -8,13 +8,8 @@ import Paginator from '../components/Pagination';
 import { useState } from 'react';
 import Router from 'next/router'
 import {styleBody}  from '../components/SharedStyles';
+import Layout from '../components/MyLayout';
 
-// const cards = props => {
-
-//         props.articles.map((ele,index) => 
-//         <Card info={ele} key={index}/>
-//         );
-// }
 
 const calculateRange = length => Array.from({ length }, (v, k) => k + 1);
 
@@ -37,21 +32,12 @@ const Articles = list => {
             query: { total: list.total , page: page }
         })
     };
-    console.log('Paginator Range and Page',range,page);
+  
     return (
-        <div>
-        <Header/>
+        
+        <Layout>
         <div style={styleBody}>
         <h1>Article List</h1>
-            {/* { <ul>
-                {props.articles.map(article =>(
-                  <li key={article._id}>
-                   <Link href="/detail/[_id]/[slug]" as={`/detail/${article._id}/${article.slug}`}>
-                         <a>{article.title}</a>
-                 </Link>
-                  </li>   
-                ))}
-            </ul>} */}
             
             {list.articles.map((article,index) =>(
                 <MyCard info={article} key={article._id}/>
@@ -63,7 +49,8 @@ const Articles = list => {
                  skip={page}
              />
          </div> 
-        </div>
+         </Layout>
+     
     )
 }
 
