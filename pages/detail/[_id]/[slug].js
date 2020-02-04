@@ -23,13 +23,15 @@ const Post = props => {
   
       }
   return  (
-    <div style={{ padding: '30px 50px' }}>
-    <Header/>
+    
+    <Layout>
     <div style={styleBody}>
      <h1>{props.article.title}</h1>
      <div dangerouslySetInnerHTML={{ __html: marked(props.article.content) }} />
     </div>
-    </div>)
+    </Layout>
+  
+    )
 }
 
 
