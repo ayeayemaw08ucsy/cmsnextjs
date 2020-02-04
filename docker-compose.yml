@@ -11,12 +11,15 @@ services:
 
   cms-client:
     container_name: cms-client
+    ports:
+      - "3003:3003"
     build:
       context: ./
       dockerfile: Dockerfile
     command: npm run client
     depends_on:
       - cms-service-dev
+     
 
   cms-service-dev:
     container_name: cms-service-dev
