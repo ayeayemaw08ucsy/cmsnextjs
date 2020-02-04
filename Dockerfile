@@ -1,10 +1,15 @@
 FROM node:latest
 
+# set working directory
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
-COPY package*.json ./
 
+# install and cache app dependencies
+ADD package.json /usr/src/app/package.json
 RUN npm install
 
-COPY . .
-CMD [ "node", "server/server.js" ]
+# add `/usr/src/app/node_modules/.bin` to $PATH
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
+
+# add app
+COPY . /usr/src/app
