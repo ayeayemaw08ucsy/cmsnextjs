@@ -2,13 +2,13 @@
 Content Management System with Nextjs Reactjs Material ui Mongo
 
 Run Command </h1>
-  <h1>DEVELOPMENT</h1><br/>
+  <h2>DEVELOPMENT</h2><br/>
      -- npm install<br/>
      -- npm run client<br/>
      -- npm run server<br/>
-  <h1>Docker Deployment</h1>
+  <h2>Docker Deployment</h2>
      -- docker-compose up --build<br/>
-  <h1>Setup .env</h1>
+  <h2>Setup .env</h2>
        change the value in env file according to docker file.<br/>
        --SVR_PORT<br/>
        --CLI_PORT<br/>
