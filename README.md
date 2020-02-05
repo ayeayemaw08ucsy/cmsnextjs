@@ -9,10 +9,10 @@ Run Command </h1>
   <h1>Docker Deployment</h1>
      -- docker-compose up --build<br/>
   <h1>Setup .env</h1>
-       change the value in env file according to docker file.
-       -SVR_PORT
-       -CLI_PORT
-       -ROOT_URL
+       change the value in env file according to docker file.<br/>
+       -SVR_PORT<br/>
+       -CLI_PORT<br/>
+       -ROOT_URL<br/>
        -MONGODB_URI
 
 ##Live app:
