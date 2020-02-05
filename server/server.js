@@ -3,6 +3,7 @@ const next =  require('next');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const Article = require('./models/Article');
+const helmet = require('helmet');
 const api = require('./api');
 
 require('dotenv').config();
@@ -26,9 +27,6 @@ db.once('open',() => {
     console.log('Connected to MongoDB');
 })
 
-//Next.js page routes
-//server.get('*', routerHandler)
-
 //Next's custom server prepared
 app.prepare().then(() => {
     
@@ -41,7 +39,17 @@ app.prepare().then(() => {
         res.setHeader('Access-Control-Allow-Credentials', true);
         next();
       });
-    api(server)
+
+    server.get('/_next/*', (req, res) => {
+        handle(req, res);
+      });
+    
+    api(server);
+
+    server.all('*', (req, res) => {
+        handle(req, res);
+    });
+    
     server.listen(PORT, (err) => {
         if(err) throw err;
         console.log(`>Ready on ${BASE_URL}`);
